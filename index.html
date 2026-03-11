@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Witt Co. | Pool Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a1628;
+      --deep: #0d1f3c;
+      --blue: #1a5fa8;
+      --aqua: #00c2e0;
+      --aqua-light: #7de8f7;
+      --white: #f5f9ff;
+      --muted: #8ba4c0;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(10,22,40,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,194,224,0.15);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      letter-spacing: 0.08em;
+      color: var(--white);
+    }
+    .nav-logo span { color: var(--aqua); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--aqua); }
+    .nav-cta {
+      background: var(--aqua); color: var(--navy);
+      border: none; padding: 0.65rem 1.5rem;
+      font-family: var(--font-body); font-weight: 500; font-size: 0.85rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      cursor: pointer; transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: var(--aqua-light); transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 8rem 4rem 4rem;
+    }
+
+    /* animated water background */
+    .water-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: linear-gradient(160deg, #0a1628 0%, #0d2650 50%, #0a3060 100%);
+    }
+    .wave {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 220px;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,194,224,0.06) 100%);
+      border-radius: 100% 100% 0 0;
+      animation: waveFloat 6s ease-in-out infinite;
+    }
+    .wave:nth-child(2) { height: 160px; opacity: 0.5; animation-delay: -2s; animation-duration: 8s; }
+    .wave:nth-child(3) { height: 100px; opacity: 0.3; animation-delay: -4s; animation-duration: 10s; }
+    @keyframes waveFloat {
+      0%, 100% { transform: translateY(0) scaleX(1); }
+      50% { transform: translateY(-20px) scaleX(1.02); }
+    }
+
+    /* floating circles */
+    .bubble {
+      position: absolute; border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(0,194,224,0.15), transparent);
+      border: 1px solid rgba(0,194,224,0.1);
+      animation: floatUp linear infinite;
+    }
+    .bubble:nth-child(4)  { width:300px; height:300px; top:10%; left:65%; animation-duration:18s; }
+    .bubble:nth-child(5)  { width:180px; height:180px; top:55%; left:80%; animation-duration:22s; animation-delay:-5s; }
+    .bubble:nth-child(6)  { width:80px;  height:80px;  top:70%; left:20%; animation-duration:14s; animation-delay:-8s; }
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(5deg); }
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 680px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--aqua);
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block; width: 28px; height: 1px; background: var(--aqua);
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 9vw, 7.5rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+    }
+    h1 em { color: var(--aqua); font-style: normal; }
+    .hero-sub {
+      font-size: 1.05rem; font-weight: 300; line-height: 1.7;
+      color: rgba(245,249,255,0.7); max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--aqua); color: var(--navy);
+      padding: 0.9rem 2.2rem; border: none;
+      font-family: var(--font-body); font-weight: 500;
+      font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase;
+      cursor: pointer; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--aqua-light); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      padding: 0.9rem 2.2rem;
+      border: 1px solid rgba(245,249,255,0.3);
+      font-family: var(--font-body); font-weight: 500;
+      font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase;
+      cursor: pointer; text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--aqua); color: var(--aqua); }
+
+    /* stats strip */
+    .hero-stats {
+      position: absolute; bottom: 3rem; right: 4rem;
+      display: flex; gap: 3rem; z-index: 1;
+    }
+    .stat-item { text-align: right; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.8rem; line-height: 1;
+      color: var(--aqua); letter-spacing: 0.04em;
+    }
+    .stat-label {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section { padding: 6rem 4rem; }
+    .section-tag {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--aqua);
+      display: flex; align-items: center; gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+    .section-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--aqua); }
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: 0.03em; line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+    h2 em { color: var(--aqua); font-style: normal; }
+
+    /* ─── SERVICES ─── */
+    #services { background: var(--deep); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5px;
+      margin-top: 3.5rem;
+      border: 1.5px solid rgba(0,194,224,0.12);
+    }
+    .service-card {
+      background: rgba(10,22,40,0.6);
+      padding: 2.8rem 2.5rem;
+      position: relative; overflow: hidden;
+      transition: background 0.3s;
+    }
+    .service-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px; background: var(--aqua);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .service-card:hover { background: rgba(0,194,224,0.05); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon {
+      font-size: 2rem; margin-bottom: 1.5rem;
+      display: block;
+    }
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.7rem; letter-spacing: 0.04em;
+      margin-bottom: 0.8rem; color: var(--white);
+    }
+    .service-card p {
+      font-size: 0.9rem; line-height: 1.75;
+      color: rgba(245,249,255,0.6);
+      font-weight: 300;
+    }
+    .service-list {
+      margin-top: 1.2rem; list-style: none;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .service-list li {
+      font-size: 0.83rem; color: var(--muted);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .service-list li::before {
+      content: '→'; color: var(--aqua); font-size: 0.8rem;
+    }
+
+    /* ─── SERVICE AREA ─── */
+    #area {
+      background: var(--navy);
+      position: relative; overflow: hidden;
+    }
+    #area::before {
+      content: 'AREA'; position: absolute;
+      font-family: var(--font-display); font-size: 20rem;
+      color: rgba(0,194,224,0.03); right: -2rem; top: 50%;
+      transform: translateY(-50%); pointer-events: none;
+      letter-spacing: -0.05em; line-height: 1;
+      z-index: 0;
+    }
+    .area-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+      margin-top: 3rem;
+    }
+    .area-desc {
+      font-size: 1rem; font-weight: 300; line-height: 1.8;
+      color: rgba(245,249,255,0.65);
+      margin-bottom: 2rem;
+    }
+    .area-tags {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+    }
+    .area-tag {
+      padding: 0.45rem 1.1rem;
+      border: 1px solid rgba(0,194,224,0.3);
+      font-size: 0.8rem; letter-spacing: 0.08em;
+      color: var(--aqua-light); font-weight: 400;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .area-tag:hover {
+      background: rgba(0,194,224,0.1); border-color: var(--aqua);
+    }
+    .area-visual {
+      background: rgba(13,31,60,0.8);
+      border: 1px solid rgba(0,194,224,0.15);
+      padding: 3rem; text-align: center;
+      position: relative;
+    }
+    .area-visual-icon { font-size: 4rem; margin-bottom: 1rem; display: block; }
+    .area-visual-title {
+      font-family: var(--font-display); font-size: 1.4rem;
+      letter-spacing: 0.08em; color: var(--aqua);
+      margin-bottom: 0.5rem;
+    }
+    .area-visual-sub { font-size: 0.85rem; color: var(--muted); }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--deep); }
+    .contact-layout {
+      display: grid; grid-template-columns: 1fr 1.3fr;
+      gap: 5rem; margin-top: 3rem; align-items: start;
+    }
+    .contact-info h3 {
+      font-family: var(--font-display); font-size: 1.5rem;
+      letter-spacing: 0.05em; margin-bottom: 1rem;
+    }
+    .contact-info p {
+      font-size: 0.9rem; line-height: 1.8;
+      color: rgba(245,249,255,0.6); font-weight: 300;
+      margin-bottom: 2rem;
+    }
+    .contact-detail {
+      display: flex; align-items: flex-start; gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .contact-detail-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: rgba(0,194,224,0.1);
+      border: 1px solid rgba(0,194,224,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .contact-detail-text { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+    .contact-detail-text strong { display: block; color: var(--white); font-weight: 500; margin-bottom: 0.1rem; }
+
+    /* form */
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    label {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    input, textarea, select {
+      background: rgba(10,22,40,0.8);
+      border: 1px solid rgba(0,194,224,0.2);
+      color: var(--white);
+      padding: 0.8rem 1rem;
+      font-family: var(--font-body); font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    input::placeholder, textarea::placeholder { color: rgba(139,164,192,0.5); }
+    input:focus, textarea:focus, select:focus { border-color: var(--aqua); }
+    select option { background: var(--deep); color: var(--white); }
+    textarea { resize: vertical; min-height: 120px; }
+    .form-submit {
+      background: var(--aqua); color: var(--navy);
+      border: none; padding: 1rem 2rem;
+      font-family: var(--font-body); font-weight: 500;
+      font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase;
+      cursor: pointer; transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .form-submit:hover { background: var(--aqua-light); transform: translateY(-2px); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #060f1e;
+      padding: 2.5rem 4rem;
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid rgba(0,194,224,0.1);
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo {
+      font-family: var(--font-display); font-size: 1.5rem;
+      letter-spacing: 0.08em; color: var(--white);
+    }
+    .footer-logo span { color: var(--aqua); }
+    footer p { font-size: 0.78rem; color: var(--muted); }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .fade-up {
+      opacity: 1; transform: translateY(0);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 1.5rem; }
+      #hero { padding: 7rem 1.5rem 10rem; }
+      .hero-stats { right: 1.5rem; bottom: 2rem; gap: 1.5rem; }
+      .stat-num { font-size: 2rem; }
+      .area-layout, .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">WITT <span>CO.</span></div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#area">Service Area</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="water-bg">
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Professional Pool Service</div>
+      <h1>CRYSTAL<br><em>CLEAR</em><br>POOLS.</h1>
+      <p class="hero-sub">Witt Co. keeps your pool pristine year-round — from routine maintenance and cleaning to full equipment upgrades.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Schedule Service</a>
+        <a href="#services" class="btn-outline">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Pools Serviced</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-tag">What We Do</div>
+    <h2>Our <em>Services</em></h2>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <span class="service-icon">🌊</span>
+        <h3>Cleaning & Maintenance</h3>
+        <p>Regular, reliable service to keep your pool sparkling clean and chemically balanced all season long.</p>
+        <ul class="service-list">
+          <li>Weekly & bi-weekly cleaning plans</li>
+          <li>Chemical balancing & water testing</li>
+          <li>Skimming, brushing & vacuuming</li>
+          <li>Filter cleaning & backwashing</li>
+          <li>Algae prevention & treatment</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">⚙️</span>
+        <h3>Equipment Upgrades</h3>
+        <p>Modernize your pool with efficient equipment that saves energy, reduces maintenance, and enhances your swim experience.</p>
+        <ul class="service-list">
+          <li>Variable-speed pump installation</li>
+          <li>Heater & heat pump upgrades</li>
+          <li>LED lighting systems</li>
+          <li>Automated control systems</li>
+          <li>Saltwater conversion</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section id="area">
+    <div style="position:relative;z-index:1;">
+    <div class="area-layout">
+      <div>
+        <div class="section-tag">Where We Work</div>
+        <h2>Service <em>Area</em></h2>
+        <p class="area-desc">Witt Co. proudly serves homeowners and commercial properties across the region. Don't see your city listed? Give us a call — we may still be able to help.</p>
+        <div class="area-tags">
+          <div class="area-tag">Destin, FL</div>
+          <div class="area-tag">+ Surrounding Areas</div>
+        </div>
+      </div>
+      <div class="area-visual">
+        <span class="area-visual-icon">📍</span>
+        <div class="area-visual-title">Locally Owned & Operated</div>
+        <div class="area-visual-sub">Proudly serving Destin, FL<br>and the surrounding Emerald Coast.</div>
+        <br>
+        <a href="#contact" class="btn-primary" style="margin-top:1rem;">Check My Area</a>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-tag">Reach Out</div>
+    <h2>Get a <em>Quote</em></h2>
+    <div class="contact-layout">
+      <div>
+        <div class="contact-info">
+          <h3>Let's Talk Pools</h3>
+          <p>Ready for a cleaner pool or an equipment upgrade? Reach out and we'll get back to you within one business day.</p>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div class="contact-detail-text">
+            <strong>Phone</strong>
+            (850) 428-4137
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <div class="contact-detail-text">
+            <strong>Email</strong>
+            wittcopoolpros@gmail.com
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🕐</div>
+          <div class="contact-detail-text">
+            <strong>Hours</strong>
+            Mon–Sat: 7am – 6pm
+          </div>
+        </div>
+      </div>
+
+            <div style="width:100%; min-height:749px;">
+        <iframe
+          src="https://link.wittcopoolpros.com/widget/form/94lxNe8dB6l0a4tfWwa6"
+          style="width:100%;height:749px;border:none;border-radius:3px"
+          id="inline-94lxNe8dB6l0a4tfWwa6"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="main Form"
+          data-height="749"
+          data-layout-iframe-id="inline-94lxNe8dB6l0a4tfWwa6"
+          data-form-id="94lxNe8dB6l0a4tfWwa6"
+          title="main Form">
+        </iframe>
+        <script src="https://link.wittcopoolpros.com/js/form_embed.js"></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">WITT <span>CO.</span></div>
+    <p>© 2025 Witt Co. Pool Service. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // scroll fade-up
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.classList.add('visible');
+          observer.unobserve(el.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(
