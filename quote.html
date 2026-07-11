@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instant Quote | Witt Co. Pool Repair & Maintenance</title>
+  <meta name="description" content="Get an instant ballpark price for pool service in Destin, FL — residential and commercial modes, sized to your pool, schedule and extras." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html"><img src="assets/logo.svg" alt="Witt Co. Pool Repair & Maintenance" /></a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="quote.html" class="nav-quote" aria-current="page">Get a Quote ☀️</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="hero hero-page">
+    <div class="bubbles" data-count="12"></div>
+    <div class="container hero-inner">
+      <span class="chip chip-onblue"><span class="dot"></span> Instant estimate · No phone call needed</span>
+      <h1>Build your <em>quote</em></h1>
+      <p class="hero-sub">Answer a few quick questions and see a ballpark monthly price right away. Final pricing is confirmed with a free on-site visit.</p>
+    </div>
+    <div class="waves">
+      <div class="wave-back">
+        <svg viewBox="0 0 2880 110" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.35)" d="M0,70 q120,-45 240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 L2880,110 L0,110 Z"/></svg>
+      </div>
+      <svg viewBox="0 0 2880 110" preserveAspectRatio="none"><path fill="#FFFFFF" d="M0,78 q120,-40 240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 L2880,110 L0,110 Z"/></svg>
+    </div>
+  </section>
+
+  <!-- QUOTE TOOL -->
+  <section>
+    <div class="container">
+
+      <div style="text-align:center;" class="reveal">
+        <div class="mode-toggle" role="group" aria-label="Quote mode">
+          <button type="button" id="mode-res" class="active" aria-pressed="true">🏠 Residential</button>
+          <button type="button" id="mode-com" aria-pressed="false">🏢 Commercial</button>
+        </div>
+      </div>
+
+      <form id="quote-form" class="quote-layout">
+
+        <div>
+          <!-- RESIDENTIAL PANEL -->
+          <div id="panel-res">
+            <div class="q-group">
+              <span class="q-label">How big is your pool? <small>A rough guess is fine — we'll measure on-site.</small></span>
+              <div class="opt-row">
+                <label class="opt"><input type="radio" name="res-size" value="small" /><span>Small · under 15k gal</span></label>
+                <label class="opt"><input type="radio" name="res-size" value="medium" checked /><span>Medium · 15–25k gal</span></label>
+                <label class="opt"><input type="radio" name="res-size" value="large" /><span>Large · 25–40k gal</span></label>
+                <label class="opt"><input type="radio" name="res-size" value="xl" /><span>Extra large · 40k+ gal</span></label>
+              </div>
+            </div>
+
+            <div class="q-group">
+              <span class="q-label">How often should we visit?</span>
+              <div class="opt-row">
+                <label class="opt"><input type="radio" name="res-freq" value="weekly" checked /><span>Weekly · recommended</span></label>
+                <label class="opt"><input type="radio" name="res-freq" value="biweekly" /><span>Bi-weekly</span></label>
+              </div>
+            </div>
+
+            <div class="q-group">
+              <span class="q-label">Anything extra? <small>Select all that apply.</small></span>
+              <div class="opt-row">
+                <label class="opt opt-extra"><input type="checkbox" name="res-extra" value="spa" /><span>Spa / hot tub</span></label>
+                <label class="opt opt-extra"><input type="checkbox" name="res-extra" value="salt" /><span>Saltwater system</span></label>
+                <label class="opt opt-extra"><input type="checkbox" name="res-extra" value="trees" /><span>Heavy tree coverage</span></label>
+                <label class="opt opt-extra"><input type="checkbox" id="res-deepclean" /><span>Pool needs a first-time deep clean</span></label>
+              </div>
+            </div>
+          </div>
+
+          <!-- COMMERCIAL PANEL -->
+          <div id="panel-com" hidden>
+            <div class="q-group">
+              <span class="q-label">What kind of property?</span>
+              <div class="opt-row">
+                <label class="opt"><input type="radio" name="com-type" value="hoa" checked /><span>HOA / community</span></label>
+                <label class="opt"><input type="radio" name="com-type" value="hotel" /><span>Hotel / resort</span></label>
+                <label class="opt"><input type="radio" name="com-type" value="apartment" /><span>Apartment complex</span></label>
+                <label class="opt"><input type="radio" name="com-type" value="gym" /><span>Gym / fitness club</span></label>
+              </div>
+            </div>
+
+            <div class="q-group">
+              <span class="q-label">Typical pool size on the property?</span>
+              <div class="opt-row">
+                <label class="opt"><input type="radio" name="com-size" value="small" /><span>Small</span></label>
+                <label class="opt"><input type="radio" name="com-size" value="medium" checked /><span>Medium</span></label>
+                <label class="opt"><input type="radio" name="com-size" value="large" /><span>Large</span></label>
+                <label class="opt"><input type="radio" name="com-size" value="xl" /><span>Extra large</span></label>
+              </div>
+            </div>
+
+            <div class="q-group">
+              <span class="q-label">Service visits per week?</span>
+              <div class="opt-row">
+                <label class="opt"><input type="radio" name="com-visits" value="1" /><span>1×</span></label>
+                <label class="opt"><input type="radio" name="com-visits" value="2" /><span>2×</span></label>
+                <label class="opt"><input type="radio" name="com-visits" value="3" checked /><span>3×</span></label>
+                <label class="opt"><input type="radio" name="com-visits" value="5" /><span>5×</span></label>
+                <label class="opt"><input type="radio" name="com-visits" value="7" /><span>Daily</span></label>
+              </div>
+            </div>
+
+            <div class="q-group" style="max-width:280px;">
+              <span class="q-label">How many pools / spas?</span>
+              <select id="com-pools">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5+</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- CONTACT DETAILS -->
+          <div class="q-group">
+            <span class="q-label">Send my quote request <small>We'll get back to you within one business day.</small></span>
+            <div class="form-grid">
+              <div class="field"><label for="q-name">Name</label><input type="text" id="q-name" placeholder="Your name" required /></div>
+              <div class="field"><label for="q-phone">Phone</label><input type="tel" id="q-phone" placeholder="(850) 555-0100" required /></div>
+              <div class="field full"><label for="q-email">Email</label><input type="email" id="q-email" placeholder="you@example.com" /></div>
+              <div class="field full"><label for="q-notes">Notes</label><textarea id="q-notes" placeholder="Address, gate codes, anything we should know…"></textarea></div>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary btn-lg">Send My Quote Request 🌊</button>
+            <p id="q-sent" hidden style="margin-top:1rem; color:var(--green); font-weight:800;">✓ Your email app should open with everything filled in — just hit send!</p>
+          </div>
+        </div>
+
+        <!-- ESTIMATE CARD -->
+        <aside class="estimate">
+          <div class="est-tag" id="est-mode-tag">Residential estimate</div>
+          <div class="est-price" id="est-price">$—</div>
+          <div class="est-per" id="est-per">/month</div>
+          <ul class="est-lines" id="est-lines"></ul>
+          <p class="est-note">This is a ballpark estimate — your final quote is confirmed with a free on-site visit. No obligation.</p>
+          <button type="submit" form="quote-form" class="btn btn-sun">Book My Free On-Site Quote</button>
+          <p class="est-call">or call <a href="tel:8504284137">(850) 428-4137</a></p>
+        </aside>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <img src="assets/logo.svg" alt="Witt Co. Pool Repair & Maintenance" />
+          <p>Crystal clear pools, zero hassle — cleaning, repairs and equipment upgrades across Destin, FL and the Emerald Coast.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="quote.html">Get a Quote</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>📞 <a href="tel:8504284137">(850) 428-4137</a></li>
+            <li>✉️ <a href="mailto:wittcopoolpros@gmail.com">wittcopoolpros@gmail.com</a></li>
+            <li>🕐 Mon–Sat: 7am – 6pm</li>
+            <li>📍 Destin, FL + Surrounding Areas</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© <span data-year>2026</span> Witt Co. Pool Repair & Maintenance. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/quote.js"></script>
+</body>
+</html>

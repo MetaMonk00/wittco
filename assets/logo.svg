@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1520 1080" role="img" aria-label="Witt Co. Pool Repair and Maintenance logo">
+  <defs>
+    <linearGradient id="badge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFB612"/>
+      <stop offset="0.5" stop-color="#F58220"/>
+      <stop offset="1" stop-color="#E8420E"/>
+    </linearGradient>
+    <radialGradient id="sunface" cx="0.38" cy="0.32" r="0.9">
+      <stop offset="0" stop-color="#FFEE8C"/>
+      <stop offset="0.6" stop-color="#FFD343"/>
+      <stop offset="1" stop-color="#FFB90A"/>
+    </radialGradient>
+    <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFD64A"/>
+      <stop offset="1" stop-color="#FFA80D"/>
+    </linearGradient>
+    <linearGradient id="trunk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#A76B33"/>
+      <stop offset="1" stop-color="#7C4A1E"/>
+    </linearGradient>
+    <path id="frond" d="M0,0 C55,-48 140,-58 198,-16 C204,-11 205,-4 200,2 C138,-26 62,-14 8,16 Z"/>
+    <g id="palm-crown">
+      <use href="#frond" transform="rotate(-178) scale(1.02)" fill="#2E8B3D"/>
+      <use href="#frond" transform="rotate(-138) scale(1.08)" fill="#37A047"/>
+      <use href="#frond" transform="rotate(-95) scale(1.05)" fill="#2E8B3D"/>
+      <use href="#frond" transform="rotate(-55) scale(1.1)" fill="#37A047"/>
+      <use href="#frond" transform="rotate(-18) scale(1.04)" fill="#2E8B3D"/>
+      <use href="#frond" transform="rotate(14) scale(0.92)" fill="#268238"/>
+      <circle cx="-6" cy="6" r="14" fill="#7A4A21"/>
+      <circle cx="16" cy="12" r="12" fill="#8B5729"/>
+      <circle cx="4" cy="20" r="11" fill="#6E401B"/>
+    </g>
+  </defs>
+
+  <!-- badge -->
+  <ellipse cx="760" cy="600" rx="600" ry="420" fill="url(#badge)" stroke="#141414" stroke-width="16"/>
+  <ellipse cx="760" cy="600" rx="584" ry="404" fill="none" stroke="#C43A10" stroke-width="5" opacity="0.55"/>
+
+  <!-- palm trees -->
+  <g stroke-linejoin="round">
+    <path d="M1042,242 C1056,310 1072,390 1064,478 L1106,478 C1100,392 1090,308 1076,240 Z" fill="url(#trunk)" stroke="#4F2F12" stroke-width="7"/>
+    <path d="M1050,300 q28,10 52,0 M1056,352 q26,10 48,0 M1060,404 q24,10 44,0" fill="none" stroke="#5F3A18" stroke-width="6" stroke-linecap="round"/>
+    <g transform="translate(1058,240)"><use href="#palm-crown"/></g>
+
+    <path d="M1296,352 C1306,400 1316,448 1310,506 L1346,506 C1342,450 1334,400 1324,350 Z" fill="url(#trunk)" stroke="#4F2F12" stroke-width="6"/>
+    <path d="M1302,398 q22,9 42,0 M1306,442 q20,9 38,0" fill="none" stroke="#5F3A18" stroke-width="5" stroke-linecap="round"/>
+    <g transform="translate(1310,350) scale(0.78)"><use href="#palm-crown"/></g>
+  </g>
+
+  <!-- sun -->
+  <polygon points="600.0,35.0 625.4,112.5 678.5,50.6 672.2,131.9 745.0,95.0 708.1,167.8 789.4,161.5 727.5,214.6 805.0,240.0 727.5,265.4 789.4,318.5 708.1,312.2 745.0,385.0 672.2,348.1 678.5,429.4 625.4,367.5 600.0,445.0 574.6,367.5 521.5,429.4 527.8,348.1 455.0,385.0 491.9,312.2 410.6,318.5 472.5,265.4 395.0,240.0 472.5,214.6 410.6,161.5 491.9,167.8 455.0,95.0 527.8,131.9 521.5,50.6 574.6,112.5" fill="url(#ray)" stroke="#DD3A1B" stroke-width="9" stroke-linejoin="round"/>
+  <circle cx="600" cy="240" r="128" fill="url(#sunface)" stroke="#E8420E" stroke-width="6"/>
+
+  <!-- sunglasses -->
+  <g>
+    <rect x="486" y="206" width="96" height="60" rx="26" fill="#191919"/>
+    <rect x="618" y="206" width="96" height="60" rx="26" fill="#191919"/>
+    <rect x="576" y="216" width="48" height="16" rx="8" fill="#191919"/>
+    <path d="M488,222 Q470,226 460,240 M712,222 Q730,226 740,240" fill="none" stroke="#191919" stroke-width="12" stroke-linecap="round"/>
+    <path d="M506,222 q14,-8 30,-2" fill="none" stroke="#4a4a4a" stroke-width="8" stroke-linecap="round"/>
+    <path d="M638,222 q14,-8 30,-2" fill="none" stroke="#4a4a4a" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="742" y="742" text-anchor="middle" font-family="'Baloo 2','Arial Rounded MT Bold','Arial Black','Trebuchet MS',sans-serif" font-weight="800" font-size="252" fill="#E32619" stroke="#141414" stroke-width="14" paint-order="stroke" letter-spacing="2">Witt Co.</text>
+
+  <!-- banner rule + subtitle -->
+  <line x1="370" y1="790" x2="1150" y2="790" stroke="#141414" stroke-width="9"/>
+  <text x="760" y="880" text-anchor="middle" font-family="'Baloo 2','Arial Narrow','Arial Black',sans-serif" font-weight="800" font-size="78" fill="#D6291B" stroke="#5E1206" stroke-width="3.5" paint-order="stroke" letter-spacing="2" textLength="760" lengthAdjust="spacingAndGlyphs">POOL REPAIR &amp; MAINTENANCE</text>
+  <line x1="370" y1="912" x2="1150" y2="912" stroke="#141414" stroke-width="9"/>
+</svg>
