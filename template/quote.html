@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instant Quote | {{BUSINESS_NAME}}</title>
+  <meta name="description" content="{{QUOTE_META_DESCRIPTION}}" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo-placeholder.svg" />
+  <!-- FILL IN: load the real fonts here -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html"><img src="assets/logo-placeholder.svg" alt="{{BUSINESS_NAME}}" /></a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="quote.html" class="nav-quote" aria-current="page">Get a Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="hero hero-page">
+    <div class="bubbles" data-count="12"></div>
+    <div class="container hero-inner">
+      <span class="chip chip-onblue"><span class="dot"></span> {{QUOTE_PAGE_EYEBROW}}</span>
+      <h1>{{QUOTE_PAGE_HEADLINE}} <em>{{QUOTE_PAGE_HEADLINE_ACCENT}}</em></h1>
+      <p class="hero-sub">{{QUOTE_PAGE_SUB}}</p>
+    </div>
+    <div class="waves">
+      <div class="wave-back">
+        <svg viewBox="0 0 2880 110" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.35)" d="M0,70 q120,-45 240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 L2880,110 L0,110 Z"/></svg>
+      </div>
+      <svg viewBox="0 0 2880 110" preserveAspectRatio="none"><path fill="#FFFFFF" d="M0,78 q120,-40 240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 L2880,110 L0,110 Z"/></svg>
+    </div>
+  </section>
+
+  <!-- QUOTE TOOL -->
+  <section>
+    <div class="container">
+
+      <div style="text-align:center;" class="reveal">
+        <div class="mode-toggle" role="group" aria-label="Quote mode">
+          <button type="button" id="mode-a" class="active" aria-pressed="true">{{MODE_A_NAME}}</button>
+          <button type="button" id="mode-b" aria-pressed="false">{{MODE_B_NAME}}</button>
+        </div>
+      </div>
+
+      <form id="quote-form" class="quote-layout">
+
+        <div>
+          <!-- ── MODE A PANEL ── -->
+          <div id="panel-a">
+            <div class="q-group">
+              <span class="q-label">{{A_Q1_LABEL}} <small>{{A_Q1_HINT}}</small></span>
+              <div class="opt-row">
+                <label class="opt"><input type="radio" name="a-tier" value="t1" /><span>{{A_TIER_1}}</span></label>
+                <label class="opt"><input type="radio" name="a-tier" value="t2" checked /><span>{{A_TIER_2}}</span></label>
+                <label class="opt"><input type="radio" name="a-tier" value="t3" /><span>{{A_TIER_3}}</span></label>
+                <label class="opt"><input type="radio" name="a-tier" value="t4" /><span>{{A_TIER_4}}</span></label>
+              </div>
+            </div>
+
+            <div class="q-group">
+              <span class="q-label">{{A_Q2_LABEL}}</span>
+              <div class="opt-row">
+                <label class="opt"><input type="radio" name="a-freq" value="f1" checked /><span>{{A_FREQ_1}}</span></label>
+                <label class="opt"><input type="radio" name="a-freq" value="f2" /><span>{{A_FREQ_2}}</span></label>
+              </div>
+            </div>
+
+            <div class="q-group">
+              <span class="q-label">{{A_Q3_LABEL}} <small>Select all that apply.</small></span>
+              <div class="opt-row">
+                <label class="opt opt-extra"><input type="checkbox" name="a-extra" value="e1" /><span>{{A_EXTRA_1}}</span></label>
+                <label class="opt opt-extra"><input type="checkbox" name="a-extra" value="e2" /><span>{{A_EXTRA_2}}</span></label>
+                <label class="opt opt-extra"><input type="checkbox" name="a-extra" value="e3" /><span>{{A_EXTRA_3}}</span></label>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── MODE B PANEL ── -->
+          <div id="panel-b" hidden>
+            <div class="q-group">
+              <span class="q-label">{{B_Q1_LABEL}}</span>
+              <div class="opt-row">
+                <label class="opt"><input type="radio" name="b-type" value="y1" checked /><span>{{B_TYPE_1}}</span></label>
+                <label class="opt"><input type="radio" name="b-type" value="y2" /><span>{{B_TYPE_2}}</span></label>
+                <label class="opt"><input type="radio" name="b-type" value="y3" /><span>{{B_TYPE_3}}</span></label>
+                <label class="opt"><input type="radio" name="b-type" value="y4" /><span>{{B_TYPE_4}}</span></label>
+              </div>
+            </div>
+
+            <div class="q-group">
+              <span class="q-label">{{B_Q2_LABEL}}</span>
+              <div class="opt-row">
+                <label class="opt"><input type="radio" name="b-tier" value="t1" /><span>{{B_TIER_1}}</span></label>
+                <label class="opt"><input type="radio" name="b-tier" value="t2" checked /><span>{{B_TIER_2}}</span></label>
+                <label class="opt"><input type="radio" name="b-tier" value="t3" /><span>{{B_TIER_3}}</span></label>
+                <label class="opt"><input type="radio" name="b-tier" value="t4" /><span>{{B_TIER_4}}</span></label>
+              </div>
+            </div>
+
+            <div class="q-group">
+              <span class="q-label">{{B_Q3_LABEL}}</span>
+              <div class="opt-row">
+                <label class="opt"><input type="radio" name="b-visits" value="1" checked /><span>1&times;</span></label>
+                <label class="opt"><input type="radio" name="b-visits" value="2" /><span>2&times;</span></label>
+                <label class="opt"><input type="radio" name="b-visits" value="3" /><span>3&times;</span></label>
+                <label class="opt"><input type="radio" name="b-visits" value="5" /><span>5&times;</span></label>
+                <label class="opt"><input type="radio" name="b-visits" value="7" /><span>Daily</span></label>
+              </div>
+            </div>
+
+            <div class="q-group" style="max-width:280px;">
+              <span class="q-label">{{B_Q4_LABEL}}</span>
+              <select id="b-qty">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5+</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- CONTACT DETAILS -->
+          <div class="q-group">
+            <span class="q-label">{{QUOTE_FORM_LABEL}} <small>{{QUOTE_FORM_HINT}}</small></span>
+            <div class="form-grid">
+              <div class="field"><label for="q-name">Name</label><input type="text" id="q-name" placeholder="Your name" required /></div>
+              <div class="field"><label for="q-phone">Phone</label><input type="tel" id="q-phone" placeholder="{{PHONE_PLACEHOLDER}}" required /></div>
+              <div class="field full"><label for="q-email">Email</label><input type="email" id="q-email" placeholder="you@example.com" /></div>
+              <div class="field full"><label for="q-notes">Notes</label><textarea id="q-notes" placeholder="{{QUOTE_NOTES_PLACEHOLDER}}"></textarea></div>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary btn-lg">{{QUOTE_SUBMIT_LABEL}}</button>
+            <p id="q-sent" hidden style="margin-top:1rem; color:var(--accent-4); font-weight:800;">&#10003; {{QUOTE_SENT_MESSAGE}}</p>
+          </div>
+        </div>
+
+        <!-- ESTIMATE CARD -->
+        <aside class="estimate">
+          <div class="est-tag" id="est-mode-tag">{{MODE_A_NAME}} estimate</div>
+          <div class="est-price" id="est-price">$&mdash;</div>
+          <div class="est-per" id="est-per">/{{PRICE_PERIOD}}</div>
+          <ul class="est-lines" id="est-lines"></ul>
+          <p class="est-note">{{ESTIMATE_DISCLAIMER}}</p>
+          <button type="submit" form="quote-form" class="btn btn-accent">{{ESTIMATE_CTA}}</button>
+          <p class="est-call">or call <a href="tel:{{PHONE_DIGITS}}">{{PHONE}}</a></p>
+        </aside>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <img src="assets/logo-placeholder.svg" alt="{{BUSINESS_NAME}}" />
+          <p>{{FOOTER_BLURB}}</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="quote.html">Get a Quote</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:{{PHONE_DIGITS}}">{{PHONE}}</a></li>
+            <li><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></li>
+            <li>{{HOURS}}</li>
+            <li>{{SERVICE_AREA}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <span data-year>2026</span> {{BUSINESS_NAME}}. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/quote.js"></script>
+</body>
+</html>

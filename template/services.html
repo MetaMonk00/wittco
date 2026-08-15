@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | {{BUSINESS_NAME}}</title>
+  <meta name="description" content="{{SERVICES_META_DESCRIPTION}}" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo-placeholder.svg" />
+  <!-- FILL IN: load the real fonts here -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html"><img src="assets/logo-placeholder.svg" alt="{{BUSINESS_NAME}}" /></a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" aria-current="page">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="quote.html" class="nav-quote">Get a Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="hero hero-page">
+    <div class="bubbles" data-count="12"></div>
+    <div class="container hero-inner">
+      <span class="chip chip-onblue"><span class="dot"></span> {{SERVICES_EYEBROW}}</span>
+      <h1>{{SERVICES_PAGE_HEADLINE}} <em>{{SERVICES_PAGE_HEADLINE_ACCENT}}</em></h1>
+      <p class="hero-sub">{{SERVICES_PAGE_SUB}}</p>
+    </div>
+    <div class="waves">
+      <div class="wave-back">
+        <svg viewBox="0 0 2880 110" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.35)" d="M0,70 q120,-45 240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 L2880,110 L0,110 Z"/></svg>
+      </div>
+      <svg viewBox="0 0 2880 110" preserveAspectRatio="none"><path fill="#FFFFFF" d="M0,78 q120,-40 240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 t240,0 L2880,110 L0,110 Z"/></svg>
+    </div>
+  </section>
+
+  <!-- SERVICE 1 -->
+  <section>
+    <div class="container">
+      <div class="grid-2" style="align-items:center;">
+        <div class="reveal">
+          <span class="chip"><span class="dot"></span> {{SERVICE_1_EYEBROW}}</span>
+          <h2>{{SERVICE_1_NAME}}</h2>
+          <p style="color:var(--muted); margin:1rem 0;">{{SERVICE_1_LONG_DESC}}</p>
+          <a href="quote.html" class="btn btn-primary">{{SERVICE_1_CTA}}</a>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">{{ICON_1}}</div>
+          <ul class="check-list">
+            <li>{{SERVICE_1_ITEM_1}}</li>
+            <li>{{SERVICE_1_ITEM_2}}</li>
+            <li>{{SERVICE_1_ITEM_3}}</li>
+            <li>{{SERVICE_1_ITEM_4}}</li>
+            <li>{{SERVICE_1_ITEM_5}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE 2 (image side flipped) -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;">
+        <div class="card reveal" style="order:1;">
+          <div class="card-icon tint-1">{{ICON_2}}</div>
+          <ul class="check-list">
+            <li>{{SERVICE_2_ITEM_1}}</li>
+            <li>{{SERVICE_2_ITEM_2}}</li>
+            <li>{{SERVICE_2_ITEM_3}}</li>
+            <li>{{SERVICE_2_ITEM_4}}</li>
+            <li>{{SERVICE_2_ITEM_5}}</li>
+          </ul>
+        </div>
+        <div class="reveal" style="order:2;">
+          <span class="chip"><span class="dot"></span> {{SERVICE_2_EYEBROW}}</span>
+          <h2>{{SERVICE_2_NAME}}</h2>
+          <p style="color:var(--muted); margin:1rem 0;">{{SERVICE_2_LONG_DESC}}</p>
+          <a href="contact.html" class="btn btn-primary">{{SERVICE_2_CTA}}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="chip"><span class="dot"></span> {{AUDIENCE_EYEBROW}}</span>
+        <h2>{{AUDIENCE_HEADLINE}}</h2>
+        <p>{{AUDIENCE_SUB}}</p>
+      </div>
+      <div class="grid-4">
+        <div class="card reveal"><div class="card-icon tint-4">{{ICON_6}}</div><h3>{{AUDIENCE_1_NAME}}</h3><p>{{AUDIENCE_1_DESC}}</p></div>
+        <div class="card reveal"><div class="card-icon tint-2">{{ICON_7}}</div><h3>{{AUDIENCE_2_NAME}}</h3><p>{{AUDIENCE_2_DESC}}</p></div>
+        <div class="card reveal"><div class="card-icon tint-3">{{ICON_8}}</div><h3>{{AUDIENCE_3_NAME}}</h3><p>{{AUDIENCE_3_DESC}}</p></div>
+        <div class="card reveal"><div class="card-icon">{{ICON_9}}</div><h3>{{AUDIENCE_4_NAME}}</h3><p>{{AUDIENCE_4_DESC}}</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="cta-band reveal">
+        <div class="bubbles" data-count="8"></div>
+        <div style="position:relative; z-index:1;">
+          <h2>{{SERVICES_CTA_HEADLINE}}</h2>
+          <p>{{SERVICES_CTA_SUB}}</p>
+        </div>
+        <div style="position:relative; z-index:1; display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="quote.html" class="btn btn-accent btn-lg">{{CTA_PRIMARY}}</a>
+          <a href="tel:{{PHONE_DIGITS}}" class="btn btn-outline-white btn-lg">Call {{PHONE}}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <img src="assets/logo-placeholder.svg" alt="{{BUSINESS_NAME}}" />
+          <p>{{FOOTER_BLURB}}</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="quote.html">Get a Quote</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:{{PHONE_DIGITS}}">{{PHONE}}</a></li>
+            <li><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></li>
+            <li>{{HOURS}}</li>
+            <li>{{SERVICE_AREA}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <span data-year>2026</span> {{BUSINESS_NAME}}. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
