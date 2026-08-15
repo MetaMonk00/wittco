@@ -1,5 +1,8 @@
 /* Blank template — shared site behavior: nav, bubbles, scroll reveal */
 
+// mark that JS is live, so reveal animations can safely start hidden
+document.documentElement.classList.add('js');
+
 // sticky nav shadow + mobile menu
 const nav = document.querySelector('.nav');
 const burger = document.querySelector('.nav-burger');

@@ -53,6 +53,7 @@ body {
   font-size: 1rem;
   line-height: 1.65;
   overflow-x: hidden;
+  overflow-wrap: break-word;
 }
 
 img { max-width: 100%; display: block; }
@@ -218,8 +219,9 @@ section { padding: 5.5rem 0; }
 }
 
 /* ─── scroll reveal ─── */
-.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal { transition: opacity 0.7s ease, transform 0.7s ease; }
+.js .reveal { opacity: 0; transform: translateY(26px); }
+.js .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ─── cards ─── */
 .card {
@@ -232,9 +234,9 @@ section { padding: 5.5rem 0; }
 }
 .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; }
-.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.8rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.8rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
 
 .card-icon {
   width: 66px; height: 66px; border-radius: var(--pill);
@@ -381,7 +383,7 @@ input::placeholder, textarea::placeholder { color: #AAAAAA; }
 .est-call a { color: var(--accent-1); font-weight: 800; text-decoration: none; }
 
 /* ─── contact ─── */
-.contact-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.3rem; margin-bottom: 3rem; }
+.contact-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.3rem; margin-bottom: 3rem; }
 .contact-cards .card { text-align: center; padding: 1.9rem 1.4rem; }
 .contact-cards .card-icon { margin: 0 auto 1rem; }
 .contact-cards a { color: var(--brand-600); font-weight: 800; text-decoration: none; }
@@ -413,7 +415,7 @@ footer { background: var(--brand-900); color: rgba(255,255,255,0.85); padding: 4
 
 /* ─── responsive ─── */
 @media (max-width: 980px) {
-  .grid-3, .grid-4, .contact-cards { grid-template-columns: 1fr 1fr; }
+  .grid-3, .grid-4, .contact-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .quote-layout { grid-template-columns: 1fr; }
   .estimate { position: static; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -435,4 +437,134 @@ footer { background: var(--brand-900); color: rgba(255,255,255,0.85); padding: 4
   .cta-band { padding: 2.4rem 1.8rem; }
   .mode-toggle { width: 100%; }
   .mode-toggle button { flex: 1; justify-content: center; padding: 0.8rem 1rem; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   COMPONENTS FOR THE FULL SITE STRUCTURE
+   Nav dropdowns, article prose, FAQ, gallery, reviews,
+   pricing plans, team, blog cards, breadcrumbs.
+   ══════════════════════════════════════════════════════════ */
+
+/* ─── nav dropdowns ─── */
+.nav-item { position: relative; }
+.nav-item.has-dd > a::after { content: ' \25BE'; font-size: 0.7em; opacity: 0.55; }
+.dropdown {
+  position: absolute; top: calc(100% + 6px); left: 0;
+  min-width: 240px; list-style: none;
+  background: var(--white); border-radius: 22px;
+  box-shadow: var(--shadow); padding: 0.6rem;
+  display: flex; flex-direction: column; gap: 2px;
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+}
+.nav-item:hover .dropdown, .nav-item:focus-within .dropdown { opacity: 1; visibility: visible; transform: none; }
+.dropdown a { display: block; padding: 0.55rem 1rem; font-size: 0.92rem; white-space: nowrap; }
+
+/* ─── breadcrumbs (on page heroes) ─── */
+.crumbs { display: flex; gap: 0.45rem; flex-wrap: wrap; font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 1rem; }
+.crumbs a { color: rgba(255,255,255,0.7); text-decoration: none; }
+.crumbs a:hover { color: var(--white); }
+
+/* ─── article & legal prose ─── */
+.prose { max-width: 68ch; margin: 0 auto; }
+.prose h2 { margin: 2.4rem 0 0.8rem; }
+.prose h3 { margin: 1.8rem 0 0.6rem; }
+.prose p { margin-bottom: 1.1rem; }
+.prose ul, .prose ol { margin: 0 0 1.2rem 1.3rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.prose a { color: var(--brand-600); }
+.prose blockquote {
+  border-left: 4px solid var(--brand-300); padding-left: 1.3rem;
+  margin: 1.6rem 0; color: var(--muted); font-style: italic;
+}
+
+/* ─── FAQ accordion ─── */
+.faq-list { display: flex; flex-direction: column; gap: 0.9rem; max-width: 820px; margin: 0 auto; }
+details.faq {
+  background: var(--white); border: 1px solid #E6E6E6;
+  border-radius: var(--radius); box-shadow: var(--shadow-soft);
+  padding: 1.2rem 1.6rem;
+}
+details.faq summary {
+  cursor: pointer; list-style: none;
+  font-family: var(--font-display); font-weight: 700; font-size: 1.08rem;
+  color: var(--brand-900);
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq summary::after {
+  content: '+'; flex-shrink: 0;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--brand-100); color: var(--brand-700);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; font-weight: 800;
+}
+details.faq[open] summary::after { content: '\2212'; }
+details.faq p { margin-top: 0.9rem; color: var(--muted); font-size: 0.96rem; }
+
+/* ─── gallery ─── */
+.gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
+.gallery-item {
+  aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden;
+  background: var(--brand-100); border: 2px dashed var(--brand-300);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-weight: 700; font-size: 0.85rem; text-align: center; padding: 1rem;
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ─── reviews ─── */
+.stars { color: var(--accent-1); letter-spacing: 2px; font-size: 1.05rem; margin-bottom: 0.7rem; }
+.review-card p { color: var(--ink); font-size: 0.98rem; }
+.review-who { margin-top: 1rem; font-weight: 800; font-size: 0.9rem; color: var(--brand-700); }
+
+/* ─── pricing plans ─── */
+.plan { display: flex; flex-direction: column; position: relative; }
+.plan.featured { border-color: var(--brand-600); box-shadow: var(--shadow); }
+.plan-badge {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--accent-1); color: var(--brand-900);
+  border-radius: var(--pill); padding: 0.3rem 1.1rem;
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+  white-space: nowrap;
+}
+.plan-price { font-family: var(--font-display); font-weight: 800; font-size: 2.6rem; line-height: 1; color: var(--brand-700); margin: 0.7rem 0 0.2rem; }
+.plan-per { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.2rem; }
+.plan .btn { margin-top: auto; }
+
+/* ─── team ─── */
+.team-photo {
+  width: 112px; height: 112px; border-radius: 50%; margin: 0 auto 1rem;
+  background: var(--brand-100); border: 2px dashed var(--brand-300);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 0.7rem; text-align: center;
+}
+.team-role { color: var(--brand-600); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.6rem; }
+
+/* ─── blog cards ─── */
+.post-thumb {
+  aspect-ratio: 16 / 9; border-radius: 20px; margin-bottom: 1.2rem; overflow: hidden;
+  background: var(--brand-100); border: 2px dashed var(--brand-300);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-weight: 700; font-size: 0.85rem;
+}
+.post-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.post-meta { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+
+/* ─── four-column footer on desktop ─── */
+@media (min-width: 981px) {
+  .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1.2fr; }
+}
+
+/* ─── responsive for the new components ─── */
+@media (max-width: 980px) {
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 680px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .nav-item.has-dd > a::after { content: ''; }
+  .dropdown {
+    position: static; opacity: 1; visibility: visible; transform: none;
+    box-shadow: none; background: var(--surface-alt);
+    margin: 2px 0 6px; padding: 0.4rem;
+  }
+  .dropdown a { text-align: center; font-size: 0.88rem; }
 }

@@ -6,26 +6,54 @@
   <title>{{BUSINESS_NAME}} | {{TAGLINE}}</title>
   <meta name="description" content="{{META_DESCRIPTION}}" />
   <link rel="icon" type="image/svg+xml" href="assets/logo-placeholder.svg" />
-  <!-- FILL IN: load the real fonts here, then set --font-display / --font-body in css/style.css -->
+  <!-- FILL IN: load the real fonts here -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
       <a class="nav-logo" href="index.html"><img src="assets/logo-placeholder.svg" alt="{{BUSINESS_NAME}}" /></a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="nav-links">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="index.html" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item has-dd"><a href="services.html">Services</a>
+          <ul class="dropdown">
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="service-1.html">{{SERVICE_1_NAME}}</a></li>
+            <li><a href="service-2.html">{{SERVICE_2_NAME}}</a></li>
+            <li><a href="service-3.html">{{SERVICE_3_NAME}}</a></li>
+            <li><a href="service-4.html">{{SERVICE_4_NAME}}</a></li>
+            <li><a href="service-5.html">{{SERVICE_5_NAME}}</a></li>
+            <li><a href="service-6.html">{{SERVICE_6_NAME}}</a></li>
+            <li><a href="service-7.html">{{SERVICE_7_NAME}}</a></li>
+            <li><a href="service-8.html">{{SERVICE_8_NAME}}</a></li>
+            <li><a href="plans.html">{{PLANS_NAV}}</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dd"><a href="areas.html">Areas</a>
+          <ul class="dropdown">
+            <li><a href="areas.html">All Areas</a></li>
+            <li><a href="area-1.html">{{AREA_1_NAME}}</a></li>
+            <li><a href="area-2.html">{{AREA_2_NAME}}</a></li>
+            <li><a href="area-3.html">{{AREA_3_NAME}}</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dd"><a href="blog.html">Resources</a>
+          <ul class="dropdown">
+            <li><a href="gallery.html">{{GALLERY_NAV}}</a></li>
+            <li><a href="reviews.html">{{REVIEWS_NAV}}</a></li>
+            <li><a href="faq.html">{{FAQ_NAV}}</a></li>
+            <li><a href="blog.html">{{BLOG_NAV}}</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
         <li><a href="quote.html" class="nav-quote">Get a Quote</a></li>
       </ul>
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="bubbles" data-count="16"></div>
     <div class="container hero-inner">
@@ -50,142 +78,150 @@
     </div>
   </section>
 
-  <!-- SERVICES PREVIEW -->
   <section>
     <div class="container">
       <div class="section-head reveal">
-        <span class="chip"><span class="dot"></span> {{SERVICES_EYEBROW}}</span>
-        <h2>{{SERVICES_HEADLINE}}</h2>
-        <p>{{SERVICES_SUB}}</p>
+        <span class="chip"><span class="dot"></span> {{HOME_SERVICES_EYEBROW}}</span>
+        <h2>{{HOME_SERVICES_TITLE}}</h2>
+        <p>{{HOME_SERVICES_INTRO}}</p>
       </div>
-      <div class="grid-2">
-        <div class="card reveal">
-          <div class="card-icon">{{ICON_1}}</div>
+      <div class="grid-4">
+        <a class="card reveal" href="service-1.html" style="text-decoration:none; color:inherit;">
+          <div class="card-icon tint-1"><!-- HOME_SVC_1_ICON -->&#9670;</div>
           <h3>{{SERVICE_1_NAME}}</h3>
-          <p>{{SERVICE_1_DESC}}</p>
-          <ul class="check-list">
-            <li>{{SERVICE_1_ITEM_1}}</li>
-            <li>{{SERVICE_1_ITEM_2}}</li>
-            <li>{{SERVICE_1_ITEM_3}}</li>
-            <li>{{SERVICE_1_ITEM_4}}</li>
-            <li>{{SERVICE_1_ITEM_5}}</li>
-          </ul>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon tint-1">{{ICON_2}}</div>
+          <p>{{HOME_SVC_1_TEXT}}</p>
+        </a>
+        <a class="card reveal" href="service-2.html" style="text-decoration:none; color:inherit;">
+          <div class="card-icon tint-2"><!-- HOME_SVC_2_ICON -->&#9670;</div>
           <h3>{{SERVICE_2_NAME}}</h3>
-          <p>{{SERVICE_2_DESC}}</p>
-          <ul class="check-list">
-            <li>{{SERVICE_2_ITEM_1}}</li>
-            <li>{{SERVICE_2_ITEM_2}}</li>
-            <li>{{SERVICE_2_ITEM_3}}</li>
-            <li>{{SERVICE_2_ITEM_4}}</li>
-            <li>{{SERVICE_2_ITEM_5}}</li>
-          </ul>
-        </div>
+          <p>{{HOME_SVC_2_TEXT}}</p>
+        </a>
+        <a class="card reveal" href="service-3.html" style="text-decoration:none; color:inherit;">
+          <div class="card-icon tint-3"><!-- HOME_SVC_3_ICON -->&#9670;</div>
+          <h3>{{SERVICE_3_NAME}}</h3>
+          <p>{{HOME_SVC_3_TEXT}}</p>
+        </a>
+        <a class="card reveal" href="service-4.html" style="text-decoration:none; color:inherit;">
+          <div class="card-icon tint-4"><!-- HOME_SVC_4_ICON -->&#9670;</div>
+          <h3>{{SERVICE_4_NAME}}</h3>
+          <p>{{HOME_SVC_4_TEXT}}</p>
+        </a>
       </div>
-      <div style="text-align:center; margin-top:2.5rem;" class="reveal">
-        <a href="services.html" class="btn btn-primary">See All Services</a>
-      </div>
+      <div style="text-align:center; margin-top:2.5rem;" class="reveal"><a href="services.html" class="btn btn-primary">See All Services</a></div>
     </div>
   </section>
 
-  <!-- QUOTE TOOL TEASER -->
   <section class="section-alt">
     <div class="container">
       <div class="section-head reveal">
-        <span class="chip"><span class="dot"></span> {{QUOTE_EYEBROW}}</span>
-        <h2>{{QUOTE_HEADLINE}}</h2>
-        <p>{{QUOTE_SUB}}</p>
+        <span class="chip"><span class="dot"></span> {{HOME_QUOTE_EYEBROW}}</span>
+        <h2>{{HOME_QUOTE_TITLE}}</h2>
+        <p>{{HOME_QUOTE_INTRO}}</p>
       </div>
       <div class="grid-2">
-        <div class="card reveal" style="text-align:center;">
-          <div class="card-icon tint-4" style="margin-inline:auto;">{{ICON_3}}</div>
-          <h3>{{MODE_A_NAME}}</h3>
-          <p>{{MODE_A_DESC}}</p>
-          <br />
-          <a href="quote.html?mode=a" class="btn btn-primary">{{MODE_A_NAME}} Quote</a>
+        <div class="card reveal">
+          <div class="card-icon tint-1"><!-- HOME_MODE_1_ICON -->&#9670;</div>
+          <h3>{{HOME_MODE_1_TITLE}}</h3>
+          <p>{{HOME_MODE_1_TEXT}}</p>
         </div>
-        <div class="card reveal" style="text-align:center;">
-          <div class="card-icon tint-2" style="margin-inline:auto;">{{ICON_4}}</div>
-          <h3>{{MODE_B_NAME}}</h3>
-          <p>{{MODE_B_DESC}}</p>
-          <br />
-          <a href="quote.html?mode=b" class="btn btn-primary">{{MODE_B_NAME}} Quote</a>
+        <div class="card reveal">
+          <div class="card-icon tint-2"><!-- HOME_MODE_2_ICON -->&#9670;</div>
+          <h3>{{HOME_MODE_2_TITLE}}</h3>
+          <p>{{HOME_MODE_2_TEXT}}</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
   <section>
     <div class="container">
       <div class="section-head reveal">
-        <span class="chip"><span class="dot"></span> {{PROCESS_EYEBROW}}</span>
-        <h2>{{PROCESS_HEADLINE}}</h2>
+        <span class="chip"><span class="dot"></span> {{HOME_PROCESS_EYEBROW}}</span>
+        <h2>{{HOME_PROCESS_TITLE}}</h2>
+        <p>{{HOME_PROCESS_INTRO}}</p>
       </div>
       <div class="grid-3">
         <div class="card reveal">
           <div class="step-num">1</div>
-          <h3>{{STEP_1_TITLE}}</h3>
-          <p>{{STEP_1_DESC}}</p>
+          <h3>{{HOME_STEP_1_TITLE}}</h3>
+          <p>{{HOME_STEP_1_TEXT}}</p>
         </div>
         <div class="card reveal">
           <div class="step-num pop-1">2</div>
-          <h3>{{STEP_2_TITLE}}</h3>
-          <p>{{STEP_2_DESC}}</p>
+          <h3>{{HOME_STEP_2_TITLE}}</h3>
+          <p>{{HOME_STEP_2_TEXT}}</p>
         </div>
         <div class="card reveal">
           <div class="step-num pop-4">3</div>
-          <h3>{{STEP_3_TITLE}}</h3>
-          <p>{{STEP_3_DESC}}</p>
+          <h3>{{HOME_STEP_3_TITLE}}</h3>
+          <p>{{HOME_STEP_3_TEXT}}</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICE AREA -->
   <section class="section-alt">
     <div class="container">
-      <div class="grid-2" style="align-items:center;">
-        <div class="reveal">
-          <span class="chip"><span class="dot"></span> {{AREA_EYEBROW}}</span>
-          <h2>{{AREA_HEADLINE}}</h2>
-          <p style="color:var(--muted); margin:1rem 0 1.6rem;">{{AREA_DESC}}</p>
-          <div class="tag-row">
-            <span class="tag tag-solid">{{AREA_TAG_1}}</span>
-            <span class="tag">{{AREA_TAG_2}}</span>
-          </div>
+      <div class="section-head reveal">
+        <span class="chip"><span class="dot"></span> {{HOME_AREAS_EYEBROW}}</span>
+        <h2>{{HOME_AREAS_TITLE}}</h2>
+        <p>{{HOME_AREAS_INTRO}}</p>
+      </div>
+      <div class="tag-row reveal" style="justify-content:center;">
+        <span class="tag tag-solid">{{HOME_AREA_TAG_1}}</span>
+        <span class="tag">{{HOME_AREA_TAG_2}}</span>
+        <span class="tag">{{HOME_AREA_TAG_3}}</span>
+        <span class="tag">{{HOME_AREA_TAG_4}}</span>
+        <span class="tag">{{HOME_AREA_TAG_5}}</span>
+        <span class="tag">{{HOME_AREA_TAG_6}}</span>
+      </div>
+      <div style="text-align:center; margin-top:2rem;" class="reveal"><a href="areas.html" class="btn btn-outline">{{HOME_AREAS_CTA}}</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="chip"><span class="dot"></span> {{HOME_REVIEWS_EYEBROW}}</span>
+        <h2>{{HOME_REVIEWS_TITLE}}</h2>
+        <p>{{HOME_REVIEWS_INTRO}}</p>
+      </div>
+      <div class="grid-3">
+        <div class="card review-card reveal">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&ldquo;{{HOME_REVIEW_1_QUOTE}}&rdquo;</p>
+          <div class="review-who">{{HOME_REVIEW_1_NAME}} &middot; {{HOME_REVIEW_1_PLACE}}</div>
         </div>
-        <div class="card reveal" style="text-align:center;">
-          <div class="card-icon tint-3" style="margin-inline:auto;">{{ICON_5}}</div>
-          <h3>{{AREA_CARD_TITLE}}</h3>
-          <p>{{AREA_CARD_DESC}}</p>
-          <br />
-          <a href="contact.html" class="btn btn-outline">{{AREA_CTA}}</a>
+        <div class="card review-card reveal">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&ldquo;{{HOME_REVIEW_2_QUOTE}}&rdquo;</p>
+          <div class="review-who">{{HOME_REVIEW_2_NAME}} &middot; {{HOME_REVIEW_2_PLACE}}</div>
+        </div>
+        <div class="card review-card reveal">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&ldquo;{{HOME_REVIEW_3_QUOTE}}&rdquo;</p>
+          <div class="review-who">{{HOME_REVIEW_3_NAME}} &middot; {{HOME_REVIEW_3_PLACE}}</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section>
     <div class="container">
       <div class="cta-band reveal">
         <div class="bubbles" data-count="8"></div>
         <div style="position:relative; z-index:1;">
-          <h2>{{CTA_HEADLINE}}</h2>
-          <p>{{CTA_SUB}} <strong>{{PHONE}}</strong>.</p>
+          <h2>{{HOME_CTA_TITLE}}</h2>
+          <p>{{HOME_CTA_TEXT}}</p>
         </div>
         <div style="position:relative; z-index:1; display:flex; gap:1rem; flex-wrap:wrap;">
           <a href="quote.html" class="btn btn-accent btn-lg">{{CTA_PRIMARY}}</a>
-          <a href="tel:{{PHONE_DIGITS}}" class="btn btn-outline-white btn-lg">Call Now</a>
+          <a href="tel:{{PHONE_DIGITS}}" class="btn btn-outline-white btn-lg">Call {{PHONE}}</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -194,11 +230,26 @@
           <p>{{FOOTER_BLURB}}</p>
         </div>
         <div>
-          <h4>Quick Links</h4>
+          <h4>Services</h4>
           <ul>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="quote.html">Get a Quote</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service-1.html">{{SERVICE_1_NAME}}</a></li>
+            <li><a href="service-2.html">{{SERVICE_2_NAME}}</a></li>
+            <li><a href="service-3.html">{{SERVICE_3_NAME}}</a></li>
+            <li><a href="service-4.html">{{SERVICE_4_NAME}}</a></li>
+            <li><a href="service-5.html">{{SERVICE_5_NAME}}</a></li>
+            <li><a href="services.html">See all &rarr;</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="areas.html">Service Areas</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
           </ul>
         </div>
         <div>

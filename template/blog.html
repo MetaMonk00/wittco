@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | {{BUSINESS_NAME}}</title>
-  <meta name="description" content="{{CONTACT_META_DESCRIPTION}}" />
+  <title>{{BLOG_NAV}} | {{BUSINESS_NAME}}</title>
+  <meta name="description" content="{{BLOG_META}}" />
   <link rel="icon" type="image/svg+xml" href="assets/logo-placeholder.svg" />
   <!-- FILL IN: load the real fonts here -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
       <a class="nav-logo" href="index.html"><img src="assets/logo-placeholder.svg" alt="{{BUSINESS_NAME}}" /></a>
@@ -41,7 +40,7 @@
             <li><a href="area-3.html">{{AREA_3_NAME}}</a></li>
           </ul>
         </li>
-        <li class="nav-item has-dd"><a href="blog.html">Resources</a>
+        <li class="nav-item has-dd"><a href="blog.html" aria-current="page">Resources</a>
           <ul class="dropdown">
             <li><a href="gallery.html">{{GALLERY_NAV}}</a></li>
             <li><a href="reviews.html">{{REVIEWS_NAV}}</a></li>
@@ -49,19 +48,19 @@
             <li><a href="blog.html">{{BLOG_NAV}}</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a href="contact.html" aria-current="page">Contact</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
         <li><a href="quote.html" class="nav-quote">Get a Quote</a></li>
       </ul>
     </div>
   </header>
 
-  <!-- PAGE HERO -->
   <section class="hero hero-page">
     <div class="bubbles" data-count="12"></div>
     <div class="container hero-inner">
-      <span class="chip chip-onblue"><span class="dot"></span> {{CONTACT_EYEBROW}}</span>
-      <h1>{{CONTACT_HEADLINE}} <em>{{CONTACT_HEADLINE_ACCENT}}</em></h1>
-      <p class="hero-sub">{{CONTACT_SUB}}</p>
+      <div class="crumbs"><a href="index.html">Home</a> <span>/</span> <span>{{BLOG_NAV}}</span></div>
+      <span class="chip chip-onblue"><span class="dot"></span> {{BLOG_EYEBROW}}</span>
+      <h1>{{BLOG_HEADLINE}} <em>{{BLOG_HEADLINE_ACCENT}}</em></h1>
+      <p class="hero-sub">{{BLOG_SUB}}</p>
     </div>
     <div class="waves">
       <div class="wave-back">
@@ -71,67 +70,65 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section>
     <div class="container">
-
-      <div class="contact-cards">
-        <div class="card reveal">
-          <div class="card-icon tint-3"><!-- ICON_PHONE -->&#9670;</div>
-          <h3>Phone</h3>
-          <p><a href="tel:{{PHONE_DIGITS}}">{{PHONE}}</a></p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon tint-1"><!-- ICON_EMAIL -->&#9670;</div>
-          <h3>Email</h3>
-          <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon tint-4"><!-- ICON_HOURS -->&#9670;</div>
-          <h3>Hours</h3>
-          <p>{{HOURS}}</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon"><!-- ICON_AREA -->&#9670;</div>
-          <h3>Service Area</h3>
-          <p>{{SERVICE_AREA}}</p>
-        </div>
+      <div class="grid-3">
+        <a class="card reveal" href="blog-post.html" style="text-decoration:none; color:inherit;">
+          <div class="post-thumb">{{POST_1_IMG}}</div>
+          <div class="post-meta">{{POST_1_DATE}} &middot; {{POST_1_CATEGORY}}</div>
+          <h3>{{POST_1_TITLE}}</h3>
+          <p>{{POST_1_EXCERPT}}</p>
+        </a>
+        <a class="card reveal" href="blog-post.html" style="text-decoration:none; color:inherit;">
+          <div class="post-thumb">{{POST_2_IMG}}</div>
+          <div class="post-meta">{{POST_2_DATE}} &middot; {{POST_2_CATEGORY}}</div>
+          <h3>{{POST_2_TITLE}}</h3>
+          <p>{{POST_2_EXCERPT}}</p>
+        </a>
+        <a class="card reveal" href="blog-post.html" style="text-decoration:none; color:inherit;">
+          <div class="post-thumb">{{POST_3_IMG}}</div>
+          <div class="post-meta">{{POST_3_DATE}} &middot; {{POST_3_CATEGORY}}</div>
+          <h3>{{POST_3_TITLE}}</h3>
+          <p>{{POST_3_EXCERPT}}</p>
+        </a>
+        <a class="card reveal" href="blog-post.html" style="text-decoration:none; color:inherit;">
+          <div class="post-thumb">{{POST_4_IMG}}</div>
+          <div class="post-meta">{{POST_4_DATE}} &middot; {{POST_4_CATEGORY}}</div>
+          <h3>{{POST_4_TITLE}}</h3>
+          <p>{{POST_4_EXCERPT}}</p>
+        </a>
+        <a class="card reveal" href="blog-post.html" style="text-decoration:none; color:inherit;">
+          <div class="post-thumb">{{POST_5_IMG}}</div>
+          <div class="post-meta">{{POST_5_DATE}} &middot; {{POST_5_CATEGORY}}</div>
+          <h3>{{POST_5_TITLE}}</h3>
+          <p>{{POST_5_EXCERPT}}</p>
+        </a>
+        <a class="card reveal" href="blog-post.html" style="text-decoration:none; color:inherit;">
+          <div class="post-thumb">{{POST_6_IMG}}</div>
+          <div class="post-meta">{{POST_6_DATE}} &middot; {{POST_6_CATEGORY}}</div>
+          <h3>{{POST_6_TITLE}}</h3>
+          <p>{{POST_6_EXCERPT}}</p>
+        </a>
       </div>
-
-      <div class="section-head reveal">
-        <span class="chip"><span class="dot"></span> {{FORM_EYEBROW}}</span>
-        <h2>{{FORM_HEADLINE}} <span class="text-accent-3">{{FORM_HEADLINE_ACCENT}}</span></h2>
-        <p>{{FORM_SUB}}</p>
-      </div>
-
-      <!-- ══════════════════════════════════════════════════════════
-           FILL IN: the lead form.
-           Option A — paste the client's embed code (CRM / form builder)
-                      in place of everything inside .form-shell.
-           Option B — keep the plain form below; it opens a pre-filled
-                      email. Change the address in the action attribute.
-           ══════════════════════════════════════════════════════════ -->
-      <div class="form-shell reveal" style="padding:2.4rem;">
-        <form class="form-grid" action="mailto:{{EMAIL}}" method="post" enctype="text/plain">
-          <div class="field"><label for="c-name">Name</label><input type="text" id="c-name" name="name" placeholder="Your name" required /></div>
-          <div class="field"><label for="c-phone">Phone</label><input type="tel" id="c-phone" name="phone" placeholder="{{PHONE_PLACEHOLDER}}" required /></div>
-          <div class="field full"><label for="c-email">Email</label><input type="email" id="c-email" name="email" placeholder="you@example.com" /></div>
-          <div class="field full"><label for="c-service">What do you need?</label>
-            <select id="c-service" name="service">
-              <option>{{SERVICE_1_NAME}}</option>
-              <option>{{SERVICE_2_NAME}}</option>
-              <option>Something else</option>
-            </select>
-          </div>
-          <div class="field full"><label for="c-msg">Message</label><textarea id="c-msg" name="message" placeholder="{{FORM_MESSAGE_PLACEHOLDER}}"></textarea></div>
-          <div class="full"><button type="submit" class="btn btn-primary btn-lg">{{FORM_SUBMIT_LABEL}}</button></div>
-        </form>
-      </div>
-
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <section>
+    <div class="container">
+      <div class="cta-band reveal">
+        <div class="bubbles" data-count="8"></div>
+        <div style="position:relative; z-index:1;">
+          <h2>{{BLOG_CTA_TITLE}}</h2>
+          <p>{{BLOG_CTA_TEXT}}</p>
+        </div>
+        <div style="position:relative; z-index:1; display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="quote.html" class="btn btn-accent btn-lg">{{CTA_PRIMARY}}</a>
+          <a href="tel:{{PHONE_DIGITS}}" class="btn btn-outline-white btn-lg">Call {{PHONE}}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="container">
       <div class="footer-grid">

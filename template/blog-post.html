@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services | {{BUSINESS_NAME}}</title>
-  <meta name="description" content="{{SERVICES_META}}" />
+  <title>{{POST_TITLE}} | {{BUSINESS_NAME}}</title>
+  <meta name="description" content="{{POST_META}}" />
   <link rel="icon" type="image/svg+xml" href="assets/logo-placeholder.svg" />
   <!-- FILL IN: load the real fonts here -->
   <link rel="stylesheet" href="css/style.css" />
@@ -18,7 +18,7 @@
       <ul class="nav-links">
         <li class="nav-item"><a href="index.html">Home</a></li>
         <li class="nav-item"><a href="about.html">About</a></li>
-        <li class="nav-item has-dd"><a href="services.html" aria-current="page">Services</a>
+        <li class="nav-item has-dd"><a href="services.html">Services</a>
           <ul class="dropdown">
             <li><a href="services.html">All Services</a></li>
             <li><a href="service-1.html">{{SERVICE_1_NAME}}</a></li>
@@ -57,10 +57,10 @@
   <section class="hero hero-page">
     <div class="bubbles" data-count="12"></div>
     <div class="container hero-inner">
-      <div class="crumbs"><a href="index.html">Home</a> <span>/</span> <span>Services</span></div>
-      <span class="chip chip-onblue"><span class="dot"></span> {{SERVICES_EYEBROW}}</span>
-      <h1>{{SERVICES_HEADLINE}} <em>{{SERVICES_HEADLINE_ACCENT}}</em></h1>
-      <p class="hero-sub">{{SERVICES_SUB}}</p>
+      <div class="crumbs"><a href="index.html">Home</a> <span>/</span> <a href="blog.html">{{BLOG_NAV}}</a> <span>/</span> <span>{{POST_TITLE}}</span></div>
+      <span class="chip chip-onblue"><span class="dot"></span> {{POST_EYEBROW}}</span>
+      <h1>{{POST_HEADLINE}} <em>{{POST_HEADLINE_ACCENT}}</em></h1>
+      <p class="hero-sub">{{POST_SUB}}</p>
     </div>
     <div class="waves">
       <div class="wave-back">
@@ -72,109 +72,24 @@
 
   <section>
     <div class="container">
-      <div class="section-head reveal">
-        <span class="chip"><span class="dot"></span> {{SERVICES_LIST_EYEBROW}}</span>
-        <h2>{{SERVICES_LIST_TITLE}}</h2>
-        <p>{{SERVICES_LIST_INTRO}}</p>
+      <div class="post-meta reveal" style="text-align:center;">{{POST_DATE}} &middot; {{POST_CATEGORY}} &middot; {{POST_AUTHOR}}</div>
+      <div class="prose reveal">
+        <p>{{POST_INTRO}}</p>
+        <h2>{{POST_H1}}</h2>
+        <p>{{POST_BODY_1}}</p>
+        <blockquote>{{POST_PULLQUOTE}}</blockquote>
+        <h2>{{POST_H2}}</h2>
+        <p>{{POST_BODY_2}}</p>
+        <ul>
+          <li>{{POST_LIST_1}}</li>
+          <li>{{POST_LIST_2}}</li>
+          <li>{{POST_LIST_3}}</li>
+        </ul>
+        <h2>{{POST_H3}}</h2>
+        <p>{{POST_BODY_3}}</p>
+        <h2>{{POST_H4}}</h2>
+        <p>{{POST_BODY_4}}</p>
       </div>
-      <div class="grid-4">
-        <a class="card reveal" href="service-1.html" style="text-decoration:none; color:inherit;">
-          <div class="card-icon tint-1"><!-- SVC_CARD_1_ICON -->&#9670;</div>
-          <h3>{{SERVICE_1_NAME}}</h3>
-          <p>{{SVC_CARD_1_TEXT}}</p>
-        </a>
-        <a class="card reveal" href="service-2.html" style="text-decoration:none; color:inherit;">
-          <div class="card-icon tint-2"><!-- SVC_CARD_2_ICON -->&#9670;</div>
-          <h3>{{SERVICE_2_NAME}}</h3>
-          <p>{{SVC_CARD_2_TEXT}}</p>
-        </a>
-        <a class="card reveal" href="service-3.html" style="text-decoration:none; color:inherit;">
-          <div class="card-icon tint-3"><!-- SVC_CARD_3_ICON -->&#9670;</div>
-          <h3>{{SERVICE_3_NAME}}</h3>
-          <p>{{SVC_CARD_3_TEXT}}</p>
-        </a>
-        <a class="card reveal" href="service-4.html" style="text-decoration:none; color:inherit;">
-          <div class="card-icon tint-4"><!-- SVC_CARD_4_ICON -->&#9670;</div>
-          <h3>{{SERVICE_4_NAME}}</h3>
-          <p>{{SVC_CARD_4_TEXT}}</p>
-        </a>
-        <a class="card reveal" href="service-5.html" style="text-decoration:none; color:inherit;">
-          <div class="card-icon"><!-- SVC_CARD_5_ICON -->&#9670;</div>
-          <h3>{{SERVICE_5_NAME}}</h3>
-          <p>{{SVC_CARD_5_TEXT}}</p>
-        </a>
-        <a class="card reveal" href="service-6.html" style="text-decoration:none; color:inherit;">
-          <div class="card-icon tint-1"><!-- SVC_CARD_6_ICON -->&#9670;</div>
-          <h3>{{SERVICE_6_NAME}}</h3>
-          <p>{{SVC_CARD_6_TEXT}}</p>
-        </a>
-        <a class="card reveal" href="service-7.html" style="text-decoration:none; color:inherit;">
-          <div class="card-icon tint-2"><!-- SVC_CARD_7_ICON -->&#9670;</div>
-          <h3>{{SERVICE_7_NAME}}</h3>
-          <p>{{SVC_CARD_7_TEXT}}</p>
-        </a>
-        <a class="card reveal" href="service-8.html" style="text-decoration:none; color:inherit;">
-          <div class="card-icon tint-3"><!-- SVC_CARD_8_ICON -->&#9670;</div>
-          <h3>{{SERVICE_8_NAME}}</h3>
-          <p>{{SVC_CARD_8_TEXT}}</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-alt">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="chip"><span class="dot"></span> {{SERVICES_PLANS_EYEBROW}}</span>
-        <h2>{{SERVICES_PLANS_TITLE}}</h2>
-        <p>{{SERVICES_PLANS_INTRO}}</p>
-      </div>
-      <div class="grid-3">
-        <div class="card plan reveal">
-          <h3>{{SERVICES_PLAN_1_NAME}}</h3>
-          <div class="plan-price">{{SERVICES_PLAN_1_PRICE}}</div>
-          <div class="plan-per">{{SERVICES_PLAN_1_PER}}</div>
-          <ul class="check-list">
-            <li>{{SERVICES_PLAN_1_ITEM_1}}</li>
-            <li>{{SERVICES_PLAN_1_ITEM_2}}</li>
-            <li>{{SERVICES_PLAN_1_ITEM_3}}</li>
-            <li>{{SERVICES_PLAN_1_ITEM_4}}</li>
-            <li>{{SERVICES_PLAN_1_ITEM_5}}</li>
-          </ul>
-          <br />
-          <a href="quote.html" class="btn btn-outline">{{SERVICES_PLAN_1_CTA}}</a>
-        </div>
-        <div class="card plan featured reveal">
-          <div class="plan-badge">{{SERVICES_PLAN_2_BADGE}}</div>
-          <h3>{{SERVICES_PLAN_2_NAME}}</h3>
-          <div class="plan-price">{{SERVICES_PLAN_2_PRICE}}</div>
-          <div class="plan-per">{{SERVICES_PLAN_2_PER}}</div>
-          <ul class="check-list">
-            <li>{{SERVICES_PLAN_2_ITEM_1}}</li>
-            <li>{{SERVICES_PLAN_2_ITEM_2}}</li>
-            <li>{{SERVICES_PLAN_2_ITEM_3}}</li>
-            <li>{{SERVICES_PLAN_2_ITEM_4}}</li>
-            <li>{{SERVICES_PLAN_2_ITEM_5}}</li>
-          </ul>
-          <br />
-          <a href="quote.html" class="btn btn-primary">{{SERVICES_PLAN_2_CTA}}</a>
-        </div>
-        <div class="card plan reveal">
-          <h3>{{SERVICES_PLAN_3_NAME}}</h3>
-          <div class="plan-price">{{SERVICES_PLAN_3_PRICE}}</div>
-          <div class="plan-per">{{SERVICES_PLAN_3_PER}}</div>
-          <ul class="check-list">
-            <li>{{SERVICES_PLAN_3_ITEM_1}}</li>
-            <li>{{SERVICES_PLAN_3_ITEM_2}}</li>
-            <li>{{SERVICES_PLAN_3_ITEM_3}}</li>
-            <li>{{SERVICES_PLAN_3_ITEM_4}}</li>
-            <li>{{SERVICES_PLAN_3_ITEM_5}}</li>
-          </ul>
-          <br />
-          <a href="quote.html" class="btn btn-outline">{{SERVICES_PLAN_3_CTA}}</a>
-        </div>
-      </div>
-      <div style="text-align:center; margin-top:2.5rem;" class="reveal"><a href="plans.html" class="btn btn-outline">{{SERVICES_PLANS_CTA}}</a></div>
     </div>
   </section>
 
@@ -183,8 +98,8 @@
       <div class="cta-band reveal">
         <div class="bubbles" data-count="8"></div>
         <div style="position:relative; z-index:1;">
-          <h2>{{SERVICES_CTA_TITLE}}</h2>
-          <p>{{SERVICES_CTA_TEXT}}</p>
+          <h2>{{POST_CTA_TITLE}}</h2>
+          <p>{{POST_CTA_TEXT}}</p>
         </div>
         <div style="position:relative; z-index:1; display:flex; gap:1rem; flex-wrap:wrap;">
           <a href="quote.html" class="btn btn-accent btn-lg">{{CTA_PRIMARY}}</a>

@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | {{BUSINESS_NAME}}</title>
-  <meta name="description" content="{{CONTACT_META_DESCRIPTION}}" />
+  <title>Privacy Policy | {{BUSINESS_NAME}}</title>
+  <meta name="description" content="{{PRIVACY_META}}" />
   <link rel="icon" type="image/svg+xml" href="assets/logo-placeholder.svg" />
   <!-- FILL IN: load the real fonts here -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
       <a class="nav-logo" href="index.html"><img src="assets/logo-placeholder.svg" alt="{{BUSINESS_NAME}}" /></a>
@@ -49,19 +48,19 @@
             <li><a href="blog.html">{{BLOG_NAV}}</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a href="contact.html" aria-current="page">Contact</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
         <li><a href="quote.html" class="nav-quote">Get a Quote</a></li>
       </ul>
     </div>
   </header>
 
-  <!-- PAGE HERO -->
   <section class="hero hero-page">
     <div class="bubbles" data-count="12"></div>
     <div class="container hero-inner">
-      <span class="chip chip-onblue"><span class="dot"></span> {{CONTACT_EYEBROW}}</span>
-      <h1>{{CONTACT_HEADLINE}} <em>{{CONTACT_HEADLINE_ACCENT}}</em></h1>
-      <p class="hero-sub">{{CONTACT_SUB}}</p>
+      <div class="crumbs"><a href="index.html">Home</a> <span>/</span> <span>Privacy Policy</span></div>
+      <span class="chip chip-onblue"><span class="dot"></span> {{PRIVACY_EYEBROW}}</span>
+      <h1>{{PRIVACY_HEADLINE}} <em>{{PRIVACY_HEADLINE_ACCENT}}</em></h1>
+      <p class="hero-sub">{{PRIVACY_SUB}}</p>
     </div>
     <div class="waves">
       <div class="wave-back">
@@ -71,67 +70,27 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section>
     <div class="container">
-
-      <div class="contact-cards">
-        <div class="card reveal">
-          <div class="card-icon tint-3"><!-- ICON_PHONE -->&#9670;</div>
-          <h3>Phone</h3>
-          <p><a href="tel:{{PHONE_DIGITS}}">{{PHONE}}</a></p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon tint-1"><!-- ICON_EMAIL -->&#9670;</div>
-          <h3>Email</h3>
-          <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon tint-4"><!-- ICON_HOURS -->&#9670;</div>
-          <h3>Hours</h3>
-          <p>{{HOURS}}</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon"><!-- ICON_AREA -->&#9670;</div>
-          <h3>Service Area</h3>
-          <p>{{SERVICE_AREA}}</p>
-        </div>
+      <p class="reveal" style="text-align:center; color:var(--muted); margin-bottom:2rem;">Last updated: {{PRIVACY_UPDATED}}</p>
+      <div class="prose reveal">
+        <p>{{PRIVACY_INTRO}}</p>
+        <h2>{{PRIVACY_H1}}</h2>
+        <p>{{PRIVACY_BODY_1}}</p>
+        <h2>{{PRIVACY_H2}}</h2>
+        <p>{{PRIVACY_BODY_2}}</p>
+        <h2>{{PRIVACY_H3}}</h2>
+        <p>{{PRIVACY_BODY_3}}</p>
+        <h2>{{PRIVACY_H4}}</h2>
+        <p>{{PRIVACY_BODY_4}}</p>
+        <h2>{{PRIVACY_H5}}</h2>
+        <p>{{PRIVACY_BODY_5}}</p>
+        <h2>{{PRIVACY_H6}}</h2>
+        <p>{{PRIVACY_BODY_6}}</p>
       </div>
-
-      <div class="section-head reveal">
-        <span class="chip"><span class="dot"></span> {{FORM_EYEBROW}}</span>
-        <h2>{{FORM_HEADLINE}} <span class="text-accent-3">{{FORM_HEADLINE_ACCENT}}</span></h2>
-        <p>{{FORM_SUB}}</p>
-      </div>
-
-      <!-- ══════════════════════════════════════════════════════════
-           FILL IN: the lead form.
-           Option A — paste the client's embed code (CRM / form builder)
-                      in place of everything inside .form-shell.
-           Option B — keep the plain form below; it opens a pre-filled
-                      email. Change the address in the action attribute.
-           ══════════════════════════════════════════════════════════ -->
-      <div class="form-shell reveal" style="padding:2.4rem;">
-        <form class="form-grid" action="mailto:{{EMAIL}}" method="post" enctype="text/plain">
-          <div class="field"><label for="c-name">Name</label><input type="text" id="c-name" name="name" placeholder="Your name" required /></div>
-          <div class="field"><label for="c-phone">Phone</label><input type="tel" id="c-phone" name="phone" placeholder="{{PHONE_PLACEHOLDER}}" required /></div>
-          <div class="field full"><label for="c-email">Email</label><input type="email" id="c-email" name="email" placeholder="you@example.com" /></div>
-          <div class="field full"><label for="c-service">What do you need?</label>
-            <select id="c-service" name="service">
-              <option>{{SERVICE_1_NAME}}</option>
-              <option>{{SERVICE_2_NAME}}</option>
-              <option>Something else</option>
-            </select>
-          </div>
-          <div class="field full"><label for="c-msg">Message</label><textarea id="c-msg" name="message" placeholder="{{FORM_MESSAGE_PLACEHOLDER}}"></textarea></div>
-          <div class="full"><button type="submit" class="btn btn-primary btn-lg">{{FORM_SUBMIT_LABEL}}</button></div>
-        </form>
-      </div>
-
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">

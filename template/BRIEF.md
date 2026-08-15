@@ -74,32 +74,68 @@ If no real photos exist, Claude will use icon tiles instead of images (that's wh
 
 ## 4. Pages
 
-Default is four pages. Check what you want, add anything missing.
+The template ships with **25 pages**. Cross out any the client doesn't need and add anything missing —
+deleting a page is a two-minute job, so don't feel obliged to fill all of them.
 
-- [ ] **Home** — hero, services preview, quote teaser, how-it-works, service area, call-to-action
-- [ ] **Services** — the detail pages for what they sell
-- [ ] **Quote** — the interactive estimate tool (see §6)
-- [ ] **Contact** — contact cards + lead form
-- [ ] Other: `______`
+**Core**
+- [ ] `index.html` — Home
+- [ ] `about.html` — About: story, values, team
+- [ ] `contact.html` — Contact cards + lead form
+- [ ] `quote.html` — The interactive estimate tool (see §6)
+
+**Services** — one hub plus eight detail pages
+- [ ] `services.html` — Overview of everything
+- [ ] `service-1.html` … `service-8.html` — One page per service. Name them in §5.
+- [ ] `plans.html` — Pricing tiers side by side
+
+**Service areas** — one hub plus a page per town (great for local search)
+- [ ] `areas.html` — Overview with the full list
+- [ ] `area-1.html` … `area-3.html` — One page per town. Name them below.
+
+**Trust & content**
+- [ ] `gallery.html` — Before & after photos
+- [ ] `reviews.html` — Customer testimonials
+- [ ] `faq.html` — Frequently asked questions
+- [ ] `blog.html` — Article index
+- [ ] `blog-post.html` — The layout a single article uses
+
+**Legal**
+- [ ] `privacy.html` — Privacy policy
+- [ ] `terms.html` — Terms of service
+
+**Towns for the area pages:** `______`, `______`, `______`
+**Need more than 3 towns or 8 services?** Say how many: `______`
+**Anything else to add:** `______`
 
 ---
 
 ## 5. Services
 
-**Two main services** get the big detailed treatment:
+Name each service the client offers, up to eight. Each one gets its own page with an intro,
+a five-point checklist, three feature cards, a three-step process and four FAQs.
 
-**Service 1 — name:** `______`
-Description (one or two sentences): `______`
-Bullet points (aim for five):
+| # | Service name | One-line description |
+|---|---|---|
+| 1 | `______` | `______` |
+| 2 | `______` | `______` |
+| 3 | `______` | `______` |
+| 4 | `______` | `______` |
+| 5 | `______` | `______` |
+| 6 | `______` | `______` |
+| 7 | `______` | `______` |
+| 8 | `______` | `______` |
+
+**For the two or three most important services**, list the five checklist points that go on their page.
+For the rest I'll draft sensible ones from the description and you can correct them.
+
+**Service 1 bullets:**
 - `______`
 - `______`
 - `______`
 - `______`
 - `______`
 
-**Service 2 — name:** `______`
-Description: `______`
-Bullets:
+**Service 2 bullets:**
 - `______`
 - `______`
 - `______`
@@ -170,12 +206,24 @@ You don't need to ask for any of this; it's built in:
 - `prefers-reduced-motion` support, keyboard focus states, and semantic HTML
 - Deep links — `quote.html?mode=commercial` opens the second mode directly
 
+- A nav bar with dropdown menus for Services, Areas and Resources, plus breadcrumbs on every inner page
+- An FAQ accordion, photo gallery grid, review cards, pricing tiers, team cards and an article layout
+
 **Files:**
 
 | File | What it holds |
 |---|---|
-| `index.html` `services.html` `quote.html` `contact.html` | The four pages |
+| 25 `.html` files | Every page, listed in §4 |
 | `css/style.css` | All styling. Only the `:root` block at the top needs filling in. |
 | `js/main.js` | Nav, bubbles, scroll reveal. No content in here. |
 | `js/quote.js` | The quote tool's questions and pricing math. |
 | `assets/` | Logo and images go here. |
+
+**How the blanks are marked:**
+
+| In the file | Means |
+|---|---|
+| `{{SOMETHING}}` | A piece of text to replace. The name says what belongs there. |
+| `◆` | An icon slot. The HTML comment right before it names the slot. |
+| Dashed grey boxes | An image slot — a photo, logo or article thumbnail. |
+| `FILL IN` comments | A spot needing a real decision: fonts, colors, the lead form. |
